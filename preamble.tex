@@ -1,0 +1,71 @@
+%%=== packages used ===%%
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{url}
+\usepackage{ragged2e}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{ulem}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{paralist}
+\usepackage{fontawesome5}
+%~ \usepackage{amssymb}
+\usepackage[hyperref]{xcolor}
+\usepackage[colorlinks,linktocpage=true,plainpages=false,breaklinks=true,%
+urlcolor=darkgray,citecolor=blue,linkcolor=darkgray,filecolor=teal]{hyperref}
+%%=== using chicago biblatex ===%%
+\usepackage[autostyle]{csquotes}
+\usepackage[authordate,strict,natbib,backend=biber,autolang=none,%
+bibencoding=latin1,booklongxref=bib,compresspages]{biblatex-chicago}
+\bibliography{bibliography}
+%%=== set fonts ===%%
+\setmainfont{TeX Gyre Schola}
+\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+%%=== commands new/renewed/define ===%%
+\newcommand{\smallindent}{\hspace{3mm}}
+\newcommand{\pali}[1]{\textit{#1}}
+\newcommand{\palibf}[1]{\textit{\bfseries #1}}
+\newcommand{\head}[2]{\subsection*{#2}\label{sut:#1}}
+\newcommand{\headtrans}[1]{%
+	\par \noindent \parskip 2mm
+	\faHeart[regular]\ #1}
+\newcommand{\sutdef}[1]{%
+	\par \noindent \parskip 2mm
+	\faAngleRight\ \pali{#1}}
+\newcommand{\sutdeftrans}[1]{%
+	\par \noindent \parskip 2mm
+	\faAngleDoubleRight\ #1}
+\newcommand{\example}[2][2]{%
+	\par \noindent \parskip #1mm
+	$\triangleright$\ \pali{#2}}
+\newcommand{\transnote}[1]{%
+	\par \noindent \parskip 2mm
+	\faLightbulb[regular]\ #1}
+%%=== used in longtable ===%%
+\newcommand{\ltblcontinuedbreak}[1]{%
+	\multicolumn{#1}{r}{Continued on the next page\ldots}\\
+}
+%%=== for footnotes ===%%
+\deffootnote[5mm]{0em}{1em}{%
+  \textsuperscript{\thefootnotemark}%
+}
+%%=== make equal side margins ===%%
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+%%=== set up document information ===%%
+\hypersetup{
+	pdfinfo={
+		Title={Grammatical Suttas of Kaccāyana},
+		Author={J.R. Bhaddacak},
+		Subject={Pali language},
+		Keywords={Pali;Theravada;Buddhism}
+	}
+}
+%%=== for selective build when editing ===%%
+%~ \includeonly{sandhi}
+%%==============%%
+\begin{document}
+\normalem
+\frontmatter
