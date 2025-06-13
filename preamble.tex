@@ -32,18 +32,31 @@ bibencoding=latin1,booklongxref=bib,compresspages]{biblatex-chicago}
 \newcommand{\headtrans}[1]{%
 	\par \noindent \parskip 2mm
 	\faHeart[regular]\ #1}
-\newcommand{\sutdef}[1]{%
-	\par \noindent \parskip 2mm
-	\faAngleRight\ \pali{#1}}
-\newcommand{\sutdeftrans}[1]{%
-	\par \noindent \parskip 2mm
-	\faAngleDoubleRight\ #1}
+\newcommand{\sutdef}[2][2]{%
+	\par \noindent \parskip #1mm
+	\faAngleRight\ \pali{#2}}
+\newcommand{\sutdeftrans}[2][2]{%
+	\par \noindent \parskip #1mm
+	\faAngleDoubleRight\ #2}
 \newcommand{\example}[2][2]{%
 	\par \noindent \parskip #1mm
 	$\triangleright$\ \pali{#2}}
-\newcommand{\transnote}[1]{%
+\newcommand{\transnote}[2][2]{%
+	\par \noindent \parskip #1mm
+	\faLightbulb[regular]\ #2}
+\newcommand{\bigbullet}[1]{%
 	\par \noindent \parskip 2mm
-	\faLightbulb[regular]\ #1}
+	\faPlay\ #1}
+%
+\newcommand{\boxnote}[1]{%
+\begin{longtable}[c]{|p{0.9\linewidth}|}
+\hline
+\vspace{-1mm}
+{\huge\faPencil*}\,\textbf{\textsc{Note:}} #1 \\[-3mm]
+\\
+\hline
+\end{longtable}
+}
 %%=== used in longtable ===%%
 \newcommand{\ltblcontinuedbreak}[1]{%
 	\multicolumn{#1}{r}{Continued on the next page\ldots}\\
@@ -65,7 +78,7 @@ bibencoding=latin1,booklongxref=bib,compresspages]{biblatex-chicago}
 	}
 }
 %%=== for selective build when editing ===%%
-%~ \includeonly{nama5}
+%~ \includeonly{sutlist}
 %%==============%%
 \begin{document}
 \normalem
